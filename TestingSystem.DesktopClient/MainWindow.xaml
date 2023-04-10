@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestingSystem.DesktopClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Главное окно" Height="400" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Button Content="Создать новый тест (+)"/>
+            <Button Content="Удалить существующий тест (-)"/>
+            <Button Content="Изменить существующий тест (*)"/>
+            <Button Content="Обновить список тестов (!)"/>
+        </StackPanel>
     </Grid>
 </Window>

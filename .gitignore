@@ -1,3 +1,5 @@
 /.vs
 /TestingSystem.DesktopClient/bin
 /TestingSystem.DesktopClient/obj
+/TestingSystem.Models/bin
+/TestingSystem.Models/obj
