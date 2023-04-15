@@ -16,7 +16,7 @@ namespace TestingSystem.Models
         public Testing(string name, Difficulty difficulty)
         {
             Name = name;
-            difficulty = difficulty;
+            this.difficulty = difficulty;
         }
 
         public void AddQuestion(Question question)

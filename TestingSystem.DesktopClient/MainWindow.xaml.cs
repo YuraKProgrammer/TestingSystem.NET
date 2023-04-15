@@ -25,11 +25,21 @@ namespace TestingSystem.DesktopClient
         {
             InitializeComponent();
             List<Testing> testings = new List<Testing>();
-            var test = new Testing("Математика 1 класс", Difficulty.Normal);
+            var test = new Testing("Математика 1 класс", Difficulty.Newbie);
             test.id = 1;
             test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
             test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
             testings.Add(test);
+            var test2 = new Testing("Математика 4 класс", Difficulty.Easy);
+            testings.Add(test2);
+            var test3 = new Testing("Математика 6 класс", Difficulty.Normal);
+            testings.Add(test3);
+            var test4 = new Testing("Математика 8 класс", Difficulty.Hard);
+            testings.Add(test4);
+            var test5 = new Testing("Математика 10 класс", Difficulty.Expert);
+            testings.Add(test5);
+            var test6 = new Testing("Русский язык 11 класс", Difficulty.Expert);
+            testings.Add(test6);
             lb.ItemsSource = testings;
         }
 
