@@ -15,4 +15,12 @@
     <Resource Include="images\icon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestingSystem.Models\TestingSystem.Models.csproj" />
+  </ItemGroup>
+
 </Project>

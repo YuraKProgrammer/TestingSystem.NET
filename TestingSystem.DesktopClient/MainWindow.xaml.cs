@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestingSystem.Models;
 
 namespace TestingSystem.DesktopClient
 {
@@ -23,6 +24,17 @@ namespace TestingSystem.DesktopClient
         public MainWindow()
         {
             InitializeComponent();
+            List<Testing> testings = new List<Testing>();
+            var test = new Testing("Математика 1 класс", Difficulty.Normal);
+            test.id = 1;
+            test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
+            test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
+            testings.Add(test);
+            lb.ItemsSource = testings;
+        }
+
+        public void _lb_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

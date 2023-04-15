@@ -8,10 +8,12 @@ namespace TestingSystem.Models
 {
     public class Question
     {
-        private string questionText = "";
+        public int id { get; set; }
+        public string questionText = "";
+        private bool isCorrectAnswer = false;
         private QuestionType questionType = QuestionType.Line;
         private string lineAnswer = "";
-        private List<Option> allOptionAnswer = new List<Option>();
+        public List<Option> allOptionsAnswer = new List<Option>();
         private List<Option> optionsAnswer = new List<Option>();
         public string HumanLineAnswer = "";
         public List<Option> HumanOptionsAnswer = new List<Option>();
@@ -33,12 +35,20 @@ namespace TestingSystem.Models
                 throw new Exception("Это должен быть вопрос с ответом в строку!");
             }
         }
-        public Question(QuestionType questionType, List<Option> options, string questionText)
+        /// <summary>
+        /// Конструктор вопроса с варинтами ответа
+        /// </summary>
+        /// <param name="questionType"></param>
+        /// <param name="options"></param>
+        /// <param name="questionText"></param>
+        /// <exception cref="Exception"></exception>
+        public Question(QuestionType questionType, List<Option> allOptions, List<Option> rightOptions, string questionText)
         {
             if (questionType == QuestionType.Options)
             {
                 this.questionType = questionType;
-                this.optionsAnswer = options;
+                this.optionsAnswer = rightOptions;
+                this.allOptionsAnswer = allOptions; 
                 this.questionText = questionText;
             }
             else
@@ -50,6 +60,7 @@ namespace TestingSystem.Models
         {
             if (String.Equals(lineAnswer, HumanLineAnswer))
             {
+                isCorrectAnswer = true;
                 return true;
             }
             else
@@ -65,7 +76,7 @@ namespace TestingSystem.Models
             {
                 var i1 = o1.Id;
                 var b = false;
-                foreach (Option o2 in humanOptions)
+                foreach (Option o2 in optionsAnswer)
                 {
                     var i2 = o2.Id;
                     if (i1 == i2)
@@ -78,7 +89,26 @@ namespace TestingSystem.Models
                     bm = false;
                 }
             }
+            if (bm == true)
+            {
+                isCorrectAnswer = true;
+            }
             return bm;
+        }
+
+        public bool GetRightOrNot()
+        {
+            return isCorrectAnswer;
+        }
+
+        public QuestionType GetQuestionType()
+        {
+            return questionType;
+        }
+
+        public List<Option> GetRigthOptions()
+        {
+            return optionsAnswer;
         }
     }
 }

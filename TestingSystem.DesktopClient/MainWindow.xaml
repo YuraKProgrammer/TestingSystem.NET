@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestingSystem.DesktopClient"
+        xmlns:controls="clr-namespace:TestingSystem.DesktopClient.UserControls"
         mc:Ignorable="d"
         Title="Главное окно" Height="400" Width="800">
     <Grid>
@@ -16,6 +17,15 @@
             <Button Content="Удалить существующий тест (-)"/>
             <Button Content="Изменить существующий тест (*)"/>
             <Button Content="Обновить список тестов (!)"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <ListBox x:Name="lb" MouseDoubleClick="_lb_MouseDoubleClick" Height="Auto" Width="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <controls:TestingControl/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>
