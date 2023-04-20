@@ -33,7 +33,15 @@ namespace TestingSystem.DesktopClient.UserControls
                 _testing = value;
                 _name.Text = _testing.Name;
                 _questionsCount.Text = _testing.GetQuestionsCount().ToString() + " вопросов";
-                _id.Text = _testing.id.ToString();
+                var ts = _testing.Time;
+                if (ts.Equals(new TimeSpan(0, 0, 0)))
+                {
+                    _time.Text = "Время не ограничено";
+                }
+                else
+                {
+                    _time.Text = "Время: " + _testing.Time.ToString();
+                }
                 string s = "Новичок";
                 var b = Brushes.Gray;
                 switch (_testing.GetDifficulty())
@@ -73,7 +81,15 @@ namespace TestingSystem.DesktopClient.UserControls
             InitializeComponent();
             _testing = testing;
             _name.Text = testing.Name;
-            _id.Text = testing.id.ToString();
+            var ts = testing.Time;
+            if (ts.Equals(new TimeSpan(0, 0, 0)))
+            {
+                _time.Text = "Время не ограничено";
+            }
+            else
+            {
+                _time.Text = "Время: " + testing.Time.ToString();
+            }
             _questionsCount.Text = testing.GetQuestionsCount().ToString() + " вопросов";
             string s = "Новичок";
             var b = Brushes.Gray;

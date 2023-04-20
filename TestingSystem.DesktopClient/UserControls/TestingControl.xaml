@@ -19,7 +19,7 @@
             <TextBlock Text="Название" x:Name="_name"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
-            <TextBlock Text="Id" x:Name="_id"/>
+            <TextBlock Text="Время" x:Name="_time"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
             <TextBlock Text="Количество вопросов" x:Name="_questionsCount"/>

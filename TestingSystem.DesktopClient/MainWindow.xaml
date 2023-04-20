@@ -19,7 +19,7 @@
             <Button Content="Обновить список тестов (!)"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <ListBox x:Name="lb" MouseDoubleClick="_lb_MouseDoubleClick" Height="Auto" Width="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListBox x:Name="lb" MouseDoubleClick="_lb_MouseDoubleClick" Height="Auto" Width="Auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <controls:TestingControl/>

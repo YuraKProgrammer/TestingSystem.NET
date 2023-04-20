@@ -30,7 +30,7 @@ namespace TestingSystem.DesktopClient
             test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
             test.AddQuestion(new Question(QuestionType.Line, "абв", "абв"));
             testings.Add(test);
-            var test2 = new Testing("Математика 4 класс", Difficulty.Easy);
+            var test2 = new Testing("Математика 4 класс", Difficulty.Easy, new TimeSpan(0,15,0));
             testings.Add(test2);
             var test3 = new Testing("Математика 6 класс", Difficulty.Normal);
             testings.Add(test3);

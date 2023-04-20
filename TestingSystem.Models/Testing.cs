@@ -9,6 +9,7 @@ namespace TestingSystem.Models
     public class Testing
     {
         public int id { get; set; }
+        public TimeSpan Time = new TimeSpan(0,0,0);
         public string Name { get; set; }
         private List<Question> questions = new List<Question>();
         private Difficulty difficulty = Difficulty.Newbie;
@@ -17,6 +18,13 @@ namespace TestingSystem.Models
         {
             Name = name;
             this.difficulty = difficulty;
+        }
+
+        public Testing (string name, Difficulty difficulty, TimeSpan time)
+        {
+            Name = name;
+            this.difficulty = difficulty;
+            this.Time = time;
         }
 
         public void AddQuestion(Question question)
